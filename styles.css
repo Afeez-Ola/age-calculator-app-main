@@ -59,6 +59,7 @@ form input {
     width: 5em;
     height: 3em;
     border-radius: 8px;
+    margin-top: 0.5em;
 }
 
 form input::placeholder {
