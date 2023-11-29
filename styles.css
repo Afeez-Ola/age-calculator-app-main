@@ -39,9 +39,10 @@ button {
 .card {
     background: var(--white);
     padding: 4em 4em;
-    margin: auto;
     display: flex;
     flex-direction: column;
+    margin: 2em;
+    border-radius: 2em 2em 8em 2em;
 }
 
 form {
