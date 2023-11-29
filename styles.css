@@ -86,3 +86,14 @@ form input::placeholder {
     position: relative;
     bottom: 2.5rem;
 }
+
+.result h1 {
+    font-size: 4em;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.result span {
+    color: var(--purple);
+    font-weight: 900;
+}
