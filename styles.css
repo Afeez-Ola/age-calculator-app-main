@@ -49,15 +49,26 @@ form {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    gap: 2em;
 }
 
 form input {
-    border: 1px red solid;
+    border: 1px solid;
+    border-color: var(--light-grey);
     width: 5em;
     height: 3em;
+    border-radius: 8px;
 }
 
-.day,.month,.year{
+form input::placeholder {
+    color: var(--light-grey);
+    font-size: 18px;
+    padding: 1em;
+}
+
+.day,
+.month,
+.year {
     display: flex;
     flex-direction: column;
 }
