@@ -5,9 +5,9 @@ import './index.css';
 import image from './assets/images/icon-arrow.svg';
 
 function App() {
- const [date, setDate] = useState("");
- const [month, setMonth] = useState("");
- const [year, setYear] = useState("");
+ const [date, setDate] = useState('');
+ const [month, setMonth] = useState('');
+ const [year, setYear] = useState('');
  const [isValidDate, setIsInvalidDate] = useState(false);
 
  function handleYearChange(e) {
@@ -24,16 +24,16 @@ function App() {
  }
 
  return (
-  <div class='container '>
-   <div class='card '>
-    <form class='flex ' action='/'>
-     <div class='day'>
+  <div className='container '>
+   <div className='card '>
+    <form className='flex ' action='/'>
+     <div className='day'>
       <label for='day' name='day'>
        Day
       </label>
       <input
        onChange={handleDateChange}
-       class='day'
+       className='day'
        type='number'
        placeholder='DD'
        value={date}
@@ -45,7 +45,7 @@ function App() {
       </label>
       <input
        onChange={handleMonthChange}
-       class='month'
+       className='month'
        type='number'
        placeholder='MM'
        value={month}
@@ -57,19 +57,19 @@ function App() {
       </label>
       <input
        onChange={handleYearChange}
-       class='year'
+       className='year'
        type='number'
        placeholder='YYYY'
        value={year}
       />
      </div>
     </form>
-    <div class='separator'>
+    <div className='separator'>
      <hr />
-     <img class='p-4 rounded-full' src={image} alt='Arrow Image' />
+     <img className='p-4 rounded-full' src={image} alt='Arrow Image' />
     </div>
 
-    <div class='result'>
+    <div className='result'>
      <h1>
       <span>--</span> Years
      </h1>
