@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Card from './components/Card';
-// import './App.css';
 import './index.css';
 import image from './assets/images/icon-arrow.svg';
 
