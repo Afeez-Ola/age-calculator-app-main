@@ -8,7 +8,8 @@ function App() {
  const [date, setDate] = useState('');
  const [month, setMonth] = useState('');
  const [year, setYear] = useState('');
- const [isValidDate, setIsInvalidDate] = useState(false);
+ const [isValidDate, setIsInvalidDate] = useState(true);
+ const [isEmpty, setIsEmpty] = useState(false);
 
  function handleYearChange(e) {
   setYear(parseInt(e.target.value));
@@ -25,7 +26,7 @@ function App() {
 
  function validateForm() {
   if (!year || !month || !date) {
-   return setIsInvalidDate(false);
+   return setIsEmpty(false);
   }
 
   // Check if the day number is between 1-31
@@ -54,7 +55,8 @@ function App() {
  }
 
  function handleSubmit() {
-  isValidDate();
+  validateForm();
+  console.log(isValidDate);
  }
 
  return (
@@ -68,13 +70,15 @@ function App() {
       <input
        onClick={handleSubmit}
        onChange={handleDateChange}
-       className='day'
+       className='day required:border-red-500 invalid:border-red-500'
        type='number'
        placeholder='DD'
        value={date}
+       required
       />
+      {!isValidDate && <p>The date is invalid</p>}
      </div>
-     <div class='month'>
+     <div className='month'>
       <label for='month' name='month'>
        Month
       </label>
@@ -85,9 +89,10 @@ function App() {
        type='number'
        placeholder='MM'
        value={month}
+       required
       />
      </div>
-     <div class='year'>
+     <div className='year'>
       <label for='year' name='year'>
        Year
       </label>
@@ -98,6 +103,7 @@ function App() {
        type='number'
        placeholder='YYYY'
        value={year}
+       required
       />
      </div>
     </form>
