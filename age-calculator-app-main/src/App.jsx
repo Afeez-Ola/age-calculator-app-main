@@ -4,9 +4,9 @@ import './index.css';
 import image from './assets/images/icon-arrow.svg';
 
 function App() {
- const [date, setDate] = useState(0);
- const [month, setMonth] = useState(0);
- const [year, setYear] = useState(0);
+ const [date, setDate] = useState("");
+ const [month, setMonth] = useState("");
+ const [year, setYear] = useState("");
  const [isValidDate, setIsInvalidDate] = useState(true);
  const [isEmpty, setIsEmpty] = useState(false);
 
@@ -69,7 +69,7 @@ function App() {
       <input
        onClick={handleSubmit}
        onChange={handleDateChange}
-       className={`day required:border-red-500 invalid:border-red-500 ${
+       className={`day  ${
         isEmpty ? 'error' : ''
        }`}
        type='number'
