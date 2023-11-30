@@ -37,14 +37,14 @@ function App() {
 
   // Check if the month number is between 1-12
   if (!(month >= 1 && month <= 12)) {
-   return setIsInvalidDate(false);
+   return setIsInvalidMonth(false);
   }
 
   // Check if the date is in the future
   const currentDate = new Date();
   const inputDate = new Date(year, month - 1, date);
   if (inputDate > currentDate) {
-   return setIsInvalidDate(false);
+   return setIsInvalidYear(false);
   }
 
   // Check for the number of days in the given month
@@ -92,6 +92,7 @@ function App() {
        value={month}
        required
       />
+      {!isValidMonth && <p>The Month is invalid</p>}
      </div>
      <div className={`year  ${isEmpty && 'error'}`}>
       <label for='year' name='year'>
@@ -106,6 +107,7 @@ function App() {
        value={year}
        required
       />
+      {!isValidYear && <p>The Year is invalid</p>}
      </div>
     </form>
     <div className='separator'>
