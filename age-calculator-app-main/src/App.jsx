@@ -5,9 +5,9 @@ import './index.css';
 import image from './assets/images/icon-arrow.svg';
 
 function App() {
- const [date, setDate] = useState();
- const [month, setMonth] = useState();
- const [year, setYear] = useState();
+ const [date, setDate] = useState("");
+ const [month, setMonth] = useState("");
+ const [year, setYear] = useState("");
  const [isValidDate, setIsInvalidDate] = useState(false);
 
  function handleYearChange(e) {
