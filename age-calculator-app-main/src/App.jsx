@@ -4,9 +4,9 @@ import './index.css';
 import image from './assets/images/icon-arrow.svg';
 
 function App() {
- const [date, setDate] = useState("");
- const [month, setMonth] = useState("");
- const [year, setYear] = useState("");
+ const [date, setDate] = useState('');
+ const [month, setMonth] = useState('');
+ const [year, setYear] = useState('');
  const [isValidDate, setIsInvalidDate] = useState(true);
  const [isEmpty, setIsEmpty] = useState(false);
 
@@ -69,9 +69,7 @@ function App() {
       <input
        onClick={handleSubmit}
        onChange={handleDateChange}
-       className={`day  ${
-        isEmpty ? 'error' : ''
-       }`}
+       className={`day  ${isEmpty ? 'error' : ''}`}
        type='number'
        placeholder='DD'
        value={date}
@@ -79,7 +77,7 @@ function App() {
       />
       {!isValidDate && <p>The date is invalid</p>}
      </div>
-     <div className='month'>
+     <div className={`month  ${isEmpty ? 'error' : ''}`}>
       <label for='month' name='month'>
        Month
       </label>
@@ -93,7 +91,7 @@ function App() {
        required
       />
      </div>
-     <div className='year'>
+     <div className={`year  ${isEmpty ? 'error' : ''}`}>
       <label for='year' name='year'>
        Year
       </label>
