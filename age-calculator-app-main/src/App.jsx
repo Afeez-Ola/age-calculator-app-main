@@ -70,7 +70,9 @@ function App() {
       <input
        onClick={handleSubmit}
        onChange={handleDateChange}
-       className='day required:border-red-500 invalid:border-red-500'
+       className={`day required:border-red-500 invalid:border-red-500 ${
+        isEmpty ? 'error' : ''
+       }`}
        type='number'
        placeholder='DD'
        value={date}
