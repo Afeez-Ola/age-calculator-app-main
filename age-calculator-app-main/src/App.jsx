@@ -11,38 +11,38 @@ function App() {
  const [isValidDate, setIsInvalidDate] = useState(false);
 
  function handleYearChange(e) {
-  setYear(e.target.value);
+  setYear(parseInt(e.target.value));
   console.log(year);
  }
  function handleMonthChange(e) {
-  setMonth(e.target.value);
+  setMonth(parseInt(e.target.value));
   console.log(month);
  }
  function handleDateChange(e) {
-  setDate(e.target.value);
+  setDate(parseInt(e.target.value));
   console.log(date);
  }
 
  function validateForm() {
   if (!year || !month || !date) {
-   setIsInvalidDate(false);
+   return setIsInvalidDate(false);
   }
 
   // Check if the day number is between 1-31
   if (!(date >= 1 && date <= 31)) {
-   setIsInvalidDate(false);
+   return setIsInvalidDate(false);
   }
 
   // Check if the month number is between 1-12
   if (!(month >= 1 && month <= 12)) {
-   setIsInvalidDate(false);
+   return setIsInvalidDate(false);
   }
 
   // Check if the date is in the future
   const currentDate = new Date();
   const inputDate = new Date(year, month - 1, date);
   if (inputDate > currentDate) {
-   setIsInvalidDate(false);
+   return setIsInvalidDate(false);
   }
 
   // Check for the number of days in the given month
@@ -50,7 +50,11 @@ function App() {
   if (date > daysInMonth) {
    setIsInvalidDate(false);
   }
-  setIsInvalidDate(true);
+  return setIsInvalidDate(true);
+ }
+
+ function handleSubmit() {
+  isValidDate();
  }
 
  return (
@@ -62,6 +66,7 @@ function App() {
        Day
       </label>
       <input
+       onClick={handleSubmit}
        onChange={handleDateChange}
        className='day'
        type='number'
@@ -74,6 +79,7 @@ function App() {
        Month
       </label>
       <input
+       onClick={handleSubmit}
        onChange={handleMonthChange}
        className='month'
        type='number'
@@ -86,6 +92,7 @@ function App() {
        Year
       </label>
       <input
+       onClick={handleSubmit}
        onChange={handleYearChange}
        className='year'
        type='number'
