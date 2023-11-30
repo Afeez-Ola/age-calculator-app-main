@@ -70,6 +70,7 @@ form input::placeholder {
 
 .error {
   border-color: var(--light-red);
+  color: var(--light-red);
 }
 
 .day,

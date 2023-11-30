@@ -107,7 +107,9 @@ function App() {
        value={year}
        required
       />
-      {!isValidYear && <p>The Year is invalid</p>}
+      {!isValidYear && (
+       <p className={`${!isValidYear && 'error'}`}>The Year is invalid</p>
+      )}
      </div>
     </form>
     <div className='separator'>
