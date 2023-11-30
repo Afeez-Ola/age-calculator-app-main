@@ -12,20 +12,20 @@ function App() {
 
  function handleYearChange(e) {
   setYear(parseInt(e.target.value));
-  console.log(year);
+  console.log(year, isEmpty);
  }
  function handleMonthChange(e) {
   setMonth(parseInt(e.target.value));
-  console.log(month);
+  console.log(month, isEmpty);
  }
  function handleDateChange(e) {
   setDate(parseInt(e.target.value));
-  console.log(date);
+  console.log(date, isEmpty);
  }
 
  function validateForm() {
-  if (!year || !month || !date) {
-   return setIsEmpty(false);
+  if (year === '' || month === '' || date === '') {
+   return setIsEmpty(true);
   }
 
   // Check if the day number is between 1-31
@@ -69,7 +69,7 @@ function App() {
       <input
        onClick={handleSubmit}
        onChange={handleDateChange}
-       className={`day  ${isEmpty ? 'error' : ''}`}
+       className={`day  ${isEmpty && 'error'}`}
        type='number'
        placeholder='DD'
        value={date}
@@ -77,7 +77,7 @@ function App() {
       />
       {!isValidDate && <p>The date is invalid</p>}
      </div>
-     <div className={`month  ${isEmpty ? 'error' : ''}`}>
+     <div className={`month  ${isEmpty && 'error'}`}>
       <label for='month' name='month'>
        Month
       </label>
@@ -91,7 +91,7 @@ function App() {
        required
       />
      </div>
-     <div className={`year  ${isEmpty ? 'error' : ''}`}>
+     <div className={`year  ${isEmpty && 'error'}`}>
       <label for='year' name='year'>
        Year
       </label>
