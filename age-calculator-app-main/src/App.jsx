@@ -8,6 +8,8 @@ function App() {
  const [month, setMonth] = useState('');
  const [year, setYear] = useState('');
  const [isValidDate, setIsInvalidDate] = useState(true);
+ const [isValidMonth, setIsInvalidMonth] = useState(true);
+ const [isValidYear, setIsInvalidYear] = useState(true);
  const [isEmpty, setIsEmpty] = useState(true);
 
  function handleYearChange(e) {
