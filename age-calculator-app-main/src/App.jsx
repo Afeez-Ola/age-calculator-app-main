@@ -8,7 +8,7 @@ function App() {
  const [month, setMonth] = useState('');
  const [year, setYear] = useState('');
  const [isValidDate, setIsInvalidDate] = useState(true);
- const [isEmpty, setIsEmpty] = useState(false);
+ const [isEmpty, setIsEmpty] = useState(true);
 
  function handleYearChange(e) {
   setYear(parseInt(e.target.value));
@@ -24,7 +24,7 @@ function App() {
  }
 
  function validateForm() {
-  if (year === '' || month === '' || date === '') {
+  if (year == '' || month == '' || date == '') {
    return setIsEmpty(true);
   }
 
