@@ -69,14 +69,14 @@ function App() {
   <div className='container '>
    <div className='card '>
     <form className='flex ' action='/'>
-     <div className='day'>
+     <div className={`day  ${isEmpty && 'error'}`}>
       <label for='day' name='day'>
        Day
       </label>
       <input
        onClick={handleSubmit}
        onChange={handleDateChange}
-       className={`day  ${isEmpty && 'error'}`}
+       className='day'
        type='number'
        placeholder='DD'
        value={date}
