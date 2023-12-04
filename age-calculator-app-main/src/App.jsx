@@ -77,7 +77,7 @@ function App() {
        value={date}
        required
       />
-      {!isValidDate && <p>The date is invalid</p>}
+      {!isValidDate && <p className='invalid'>The date is invalid</p>}
      </div>
      <div className={`month  ${isEmpty && 'error'}`}>
       <label for='month' name='month'>
@@ -92,7 +92,7 @@ function App() {
        value={month}
        required
       />
-      {!isValidMonth && <p>The Month is invalid</p>}
+      {!isValidMonth && <p className='invalid'>The Month is invalid</p>}
      </div>
      <div className={`year  ${isEmpty && 'error'}`}>
       <label for='year' name='year'>
@@ -107,9 +107,7 @@ function App() {
        value={year}
        required
       />
-      {!isValidYear && (
-       <p className={`${!isValidYear && 'error'}`}>The Year is invalid</p>
-      )}
+      {!isValidYear && <p className='invalid'>The Year is invalid</p>}
      </div>
     </form>
     <div className='separator'>

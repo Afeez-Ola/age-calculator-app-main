@@ -70,6 +70,10 @@ form input::placeholder {
 
 .error {
   border-color: var(--light-red);
+  
+}
+
+.invalid{
   color: var(--light-red);
 }
 
